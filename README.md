@@ -13,15 +13,31 @@ Autor pracuje w sektorze farmaceutycznym. Analiza powstała prywatnie, bez zlece
   - **Problem i rynek**: kaskada opieki i hipotezy, regiony, leki i zamówienia publiczne (bez nazw leków i firm);
   - **Działania**: TOP 3, inicjatywy, ocena działań systemowych, wzór dla samorządów;
   - **Metoda i źródła**: założenia, przewodnik „Jak czytać”, metodologia z deklaracją, sprawdzenie (symulowana recenzja i audyt), źródła, aneks.
-- `pobierz/hcv_model_inwestycji.xlsx` – model z formułami (bez makr).
-- `pobierz/parametry.csv` – 110 parametrów, każdy ze źródłem, datą i typem (dane PL / zagraniczne / założenie).
+- `pobierz/hcv_model_inwestycji.xlsx` – model z formułami (bez makr), z przeliczonymi wartościami; arkusze dla scenariuszy S0, I1, I2, I3, I4, I5, V1.
+- `pobierz/parametry.csv` – 114 parametrów, każdy ze źródłem, datą i typem (dane PL / zagraniczne / założenie).
 - `SPEC_panel_6_rol.md` – specyfikacja i **symulowana** recenzja sześciu ról (np. płatnik, ZUS, klinicysta). Role zostały odegrane przez autora narzędzia; żadna realna osoba ani instytucja nie recenzowała ani nie zatwierdzała tej aplikacji.
 
 ## Metoda w skrócie
-Model Markowa z otwartą kohortą (2026–2075, grupy wieku, korekta połowy cyklu), wyniki główne dla wartości bazowych założeń, probabilistyczna analiza wrażliwości (Monte Carlo, 2000 losowań), perspektywy płatnika zgodne z wytycznymi AOTMiT, dyskontowanie 5% / 3,5%. Szczegóły i ograniczenia: zakładka „Metodologia” w aplikacji.
+Model Markowa z otwartą kohortą (2026–2075, grupy wieku, korekta połowy cyklu), wyniki główne dla wartości bazowych założeń, probabilistyczna analiza wrażliwości (Monte Carlo, 2000 losowań), perspektywy płatnika zgodne z wytycznymi AOTMiT, dyskontowanie 5% / 3,5%. Koszt QALY porównujemy z progiem 244 821 zł w perspektywie NFZ (płatnika); perspektywa sektora publicznego pokazana osobno. Szczegóły i ograniczenia: zakładka „Metodologia” w aplikacji.
 
 ## Źródła
 Dane publiczne: NFZ (statystyki programu lekowego B.71, Informator o terminach leczenia), NIZP PZH-PIB (EPIMELD), GUS, ZUS, AOTMiT, literatura recenzowana. Pełna lista ze źródłem i datą każdej liczby: zakładka „Źródła” oraz `pobierz/parametry.csv`. Stan danych: 28.10.2026.
+
+## Audyt 2 – 28.10.2026 (symulowany)
+Drugi audyt (role analityka danych i researchera źródeł odegrane przez asystenta AI – nie realni eksperci): 2 ustalenia krytyczne, 9 ważnych, 18 drobnych. Wszystkie wprowadzone albo opisane jako ograniczenie. **Część wyników się pogorszyła i pokazujemy je bez zmian.** Wszystkie liczby to szacunek modelu (wartości bazowe).
+
+| Wynik (wartości bazowe) | Przed audytem 2 | Po audycie 2 |
+|---|---|---|
+| Koszt zaniechania (S0), 50 lat, sektor publiczny | 8 336 mln zł | 6 034 mln zł |
+| Koszt zaniechania (S0), 20 lat | 2 001 mln zł | 1 036 mln zł |
+| Pakiet WHO (I4), saldo 20 lat, sektor publiczny | +2 987 mln zł (koszt) | +2 408 mln zł (koszt) |
+| Pakiet WHO, koszt QALY 20 lat – NFZ (porównywany z progiem) | 58 483 zł | 82 294 zł |
+| Pakiet WHO, koszt QALY 20 lat – sektor publiczny | 52 157 zł | 77 717 zł |
+| Testowanie w szpitalach (I1), koszt QALY 20 lat – NFZ | 48 298 zł | 67 446 zł |
+| Testowanie w POZ (I2), koszt QALY 20 lat – NFZ | 166 173 zł | 165 038 zł |
+| Populacje kluczowe (I3), koszt QALY 20 lat – NFZ | 22 260 zł | 20 463 zł |
+
+Najważniejsze zmiany: zasiłek chorobowy liczony jako dni × 80% stawki tylko u pracujących (K-A); tabela krok po kroku zamiast mieszania wyników (K-B); koszt QALY w perspektywie NFZ (W1); kalibracja oddzielona od walidacji (W2); wydajność testów w POZ 0,47% jako scenariusz (W3); 1,2% opisane jako laboratoria w kampanii (W4); przejście do leczenia 57,4% (W5); udział HCV w marskości 20,4% (W6); przejście F3→rak wątroby (W7); brak zaległej puli w status quo (W8); scenariusz wolniejszej progresji (W9). Egipt 91,8% i zgony B18 = 88 oznaczone jako niezweryfikowane. Rozkład zmian krok po kroku: zakładka „Jak to zostało sprawdzone” → „Audyt 2”.
 
 ## Lista zmian – 28.10.2026 (wersja po audycie)
 Wersja po wewnętrznym audycie metodycznym (3 błędy krytyczne, 8 istotnych, 12 drobnych – wszystkie wprowadzone lub opisane jako ograniczenie). **Wyniki programów są gorsze niż w wersji z 27.10.2026** – np. testowanie w populacjach kluczowych nie zwraca się już w 50 lat (wcześniej ok. 2041 r.). Główna przyczyna: koszty opieki i świadczenia ZUS liczone teraz tylko dla osób zdiagnozowanych i pozostających pod opieką. Tabela „przed i po”: zakładka „Jak to zostało sprawdzone” w aplikacji.
