@@ -23,6 +23,26 @@ Model Markowa z otwartą kohortą (2026–2075, grupy wieku, korekta połowy cyk
 ## Źródła
 Dane publiczne: NFZ (statystyki programu lekowego B.71, Informator o terminach leczenia), NIZP PZH-PIB (EPIMELD), GUS, ZUS, AOTMiT, literatura recenzowana. Pełna lista ze źródłem i datą każdej liczby: zakładka „Źródła” oraz `pobierz/parametry.csv`. Stan danych: 28.10.2026.
 
+## Audyt 3 – 28.10.2026 (symulowany)
+Trzeci audyt (role analityka danych i researchera źródeł odegrane przez asystenta AI – nie realni eksperci; ocena przed poprawkami 6,5/10, B−): 2 ustalenia krytyczne, 6 istotnych, 11 drobnych. Wszystkie wprowadzone albo opisane jako ograniczenie. Część wyników się poprawiła, część pogorszyła – pokazujemy je bez wybierania. Wszystkie liczby to szacunek modelu.
+
+| Wynik | Po audycie 2 | Po audycie 3 |
+|---|---|---|
+| Koszt zaniechania (S0), 20 lat, sektor publiczny (bazowo) | 1 036 mln zł | 1 129 mln zł |
+| S0, 20 lat – bez zasiłków chorobowych (ekstrapolacja absencji) | 180 mln zł | 273 mln zł |
+| S0, 50 lat (bazowo) | 6 034 mln zł | 6 353 mln zł |
+| S0, 50 lat – bez zasiłków chorobowych | 3 761 mln zł | 4 080 mln zł |
+| S0 dla NFZ: 10 / 20 / 30 lat | −629 mln zł (taniej) w 10 lat | −629 / −145 / +713 mln zł |
+| Pakiet WHO (I4), saldo 20 lat (bazowo) | +2 408 mln zł | +2 439 mln zł |
+| I4, saldo 20 lat – Monte Carlo mediana [95%] | 2 707 [2 281–3 293] | 2 446 [2 117–2 774] |
+| I4, wydatek NFZ w 5 lat: bazowo / MC | 1 629 / 1 972 [1 641–2 501] mln zł | 1 742 / 1 735 [1 561–1 959] mln zł |
+| I4, koszt QALY 20 lat – NFZ / publiczny | 82 294 / 77 717 zł | 72 483 / 66 049 zł |
+| POZ (I2), koszt QALY 20 lat – NFZ; szansa < progu | 165 038 zł; 99% | 165 038 zł; 91% |
+| Samo leczenie (V1), rok zwrotu (publiczny) | 2059 | 2056 |
+| Koszty ZUS przypisane HCV, 2026 | 27,4 mln zł | 43,8 mln zł |
+
+Najważniejsze zmiany: rozkłady Monte Carlo wyśrodkowane na wartościach bazowych (K1); koszt zaniechania bez ekstrapolowanych zasiłków pokazany obok wyniku głównego (K2); udziały HCV rekalibrowane w każdym losowaniu (I1); odsetek rozpoczynających leczenie w pakiecie 69,45% – środek 57,4–81,5% (I2); udział HCV w marskości K74 37,2% – bez marskości alkoholowej (I3); scenariusz POZ 0,26% (I4). Egipt 91,8% wyliczony z pełnego tekstu (1 054 695 / 1 148 346), nieużywany; zgony B18 = 88 nadal niezweryfikowane. Próg 244 821 zł/QALY: stan 28.10.2026 – nowe obwieszczenie GUS jeszcze nie opublikowane. Rozkład zmian krok po kroku: zakładka „Jak to zostało sprawdzone” → „Audyt 3”.
+
 ## Audyt 2 – 28.10.2026 (symulowany)
 Drugi audyt (role analityka danych i researchera źródeł odegrane przez asystenta AI – nie realni eksperci): 2 ustalenia krytyczne, 9 ważnych, 18 drobnych. Wszystkie wprowadzone albo opisane jako ograniczenie. **Część wyników się pogorszyła i pokazujemy je bez zmian.** Wszystkie liczby to szacunek modelu (wartości bazowe).
 
@@ -53,13 +73,14 @@ Wersja po wewnętrznym audycie metodycznym (3 błędy krytyczne, 8 istotnych, 12
 - I6: rozrzut ceny leków w PSA z wahań 2017–2025; cena z 2017 r. (33 872 zł) jako scenariusz.
 - I7: renty przeliczane wskaźnikami waloryzacji ZUS; WLOSS skalibrowane do danych ZUS; EMP opisane jako ograniczenie.
 - I8: kohorta w 4 grupach wieku (B.71 2025); średni wiek losowany w PSA.
-- D1–D12: p90 kolejki 567/585 dni; Rosińska i in. 2015 (dane 2004–05); RE_KEY 6,2/100 osobolat; korekta połowy cyklu; SMR 10 dla PWID (symetrycznie); SVR 0,97; uwaga o niespójności p_SCCHCC; koszt 1. roku po przeszczepie 30 167,61 zł (×CPI); uwagi o reinfekcji i użytecznościach; scenariusz malejącej zapadalności; 38 zamawiających; kalkulator 300 vs 2 000 losowań i kolejność kwantyli roku zwrotu.
+- D1–D12: p90 kolejki 567/585 dni; Rosińska i in. 2015 (dane 2004–05); RE_KEY 6,2/100 osobolat; korekta połowy cyklu; SMR 10 dla PWID (symetrycznie; od audytu 2: SMR 14,68, Mathers 2013); SVR 0,97; uwaga o niespójności p_SCCHCC; koszt 1. roku po przeszczepie 30 167,61 zł (×CPI); uwagi o reinfekcji i użytecznościach; scenariusz malejącej zapadalności; 38 zamawiających; kalkulator 300 vs 2 000 losowań i kolejność kwantyli roku zwrotu.
 - Nowe: wariant „testy finansuje inny płatnik” (porównanie samego kosztu wyleczenia z kosztami nieleczenia) oraz wynik na jednego zdiagnozowanego pacjenta.
 - Model z wersji v1 (pe_model) jest zastąpiony przez silnik aplikacji i nie jest publikowany.
 - Dodatkowo: w pliku xlsx usunięto kolizję nazw zakresów (stopa dyskonta kosztów i efektów) – po poprawce wartości w arkuszu zgadzają się ze stroną.
 - Deklaracja finansowania i konfliktu interesów (CHEERS 2022) – w stopce, na ekranie Wynik, w Metodologii, w arkuszu xlsx i w README; źródła finansowane przez przemysł oznaczone w Źródłach.
 - Jedna aplikacja (28.10.2026): cała treść wcześniejszych roboczych stron (raport, model v1, audyt) przeniesiona do aplikacji – hipotezy, zakładka „Leki i zamówienia publiczne”, ocena działań A1–A9, przebieg audytu; pogrupowana nawigacja. Treści o charakterze komercyjnym nie zostały przeniesione.
-- Inwentarz danych (28.10.2026): przywrócono pominięte dane publiczne z wcześniejszych wersji (m.in. 0,47% z wiremią – PLoS One 2017; trend rozpoznań i leczenia wobec 2019 r.; dane programu Moje Zdrowie z IV 2026; EUDA 2024; UKHSA 2026; interpretacja luk wojewódzkich; dodatkowe ograniczenie modelu; pełna tabela weryfikacji 33 parametrów). Wyniki modelu bez zmian.
+- Inwentarz danych (28.10.2026): przywrócono pominięte dane publiczne z wcześniejszych wersji (m.in. 0,47% z wiremią – PLoS One 2017; trend rozpoznań i leczenia wobec 2019 r.; dane programu Moje Zdrowie z IV 2026; EUDA 2024; UKHSA 2025; interpretacja luk wojewódzkich; dodatkowe ograniczenie modelu; pełna tabela weryfikacji 33 parametrów). Wyniki modelu bez zmian.
+- Audyt 2 i audyt 3 (28.10.2026, symulowane): zob. sekcje „Audyt 3” i „Audyt 2” powyżej oraz zakładkę „Aneks – lista zmian” w aplikacji.
 
 Poprzednia wersja (27.10.2026) jest dostępna w historii repozytorium; jej wyniki są nieaktualne.
 
