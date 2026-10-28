@@ -4,8 +4,15 @@ Edukacyjny model farmakoekonomiczny WZW typu C (HCV) w Polsce. Pokazuje, czy i k
 
 **Wszystkie wyniki to szacunki modelu, nie dane obserwowane.** Materiał ma charakter edukacyjny, jest neutralny i nie jest reklamą żadnego produktu leczniczego. Nie zawiera nazw leków ani firm.
 
+## Deklaracja finansowania i konfliktu interesów
+Autor pracuje w sektorze farmaceutycznym. Analiza powstała prywatnie, bez zlecenia i finansowania jakiejkolwiek firmy. Nie wymienia ani nie promuje żadnych produktów leczniczych. Część wykorzystanych źródeł była finansowana przez przemysł — oznaczono to w Źródłach.
+
 ## Zawartość
-- `index.html` – aplikacja (jeden plik, działa offline): wynik, kalkulator, scenariusze, założenia, przewodnik „Jak czytać”, metodologia, źródła.
+- `index.html` – jedna aplikacja (jeden plik, działa offline), cztery grupy sekcji:
+  - **Odpowiedź**: wynik, kalkulator, scenariusze;
+  - **Problem i rynek**: kaskada opieki i hipotezy, regiony, leki i zamówienia publiczne (bez nazw leków i firm);
+  - **Działania**: TOP 3, inicjatywy, ocena działań systemowych, wzór dla samorządów;
+  - **Metoda i źródła**: założenia, przewodnik „Jak czytać”, metodologia z deklaracją, sprawdzenie (symulowana recenzja i audyt), źródła, aneks.
 - `pobierz/hcv_model_inwestycji.xlsx` – model z formułami (bez makr).
 - `pobierz/parametry.csv` – 110 parametrów, każdy ze źródłem, datą i typem (dane PL / zagraniczne / założenie).
 - `SPEC_panel_6_rol.md` – specyfikacja i **symulowana** recenzja sześciu ról (np. płatnik, ZUS, klinicysta). Role zostały odegrane przez autora narzędzia; żadna realna osoba ani instytucja nie recenzowała ani nie zatwierdzała tej aplikacji.
@@ -34,6 +41,8 @@ Wersja po wewnętrznym audycie metodycznym (3 błędy krytyczne, 8 istotnych, 12
 - Nowe: wariant „testy finansuje inny płatnik” (porównanie samego kosztu wyleczenia z kosztami nieleczenia) oraz wynik na jednego zdiagnozowanego pacjenta.
 - Model z wersji v1 (pe_model) jest zastąpiony przez silnik aplikacji i nie jest publikowany.
 - Dodatkowo: w pliku xlsx usunięto kolizję nazw zakresów (stopa dyskonta kosztów i efektów) – po poprawce wartości w arkuszu zgadzają się ze stroną.
+- Deklaracja finansowania i konfliktu interesów (CHEERS 2022) – w stopce, na ekranie Wynik, w Metodologii, w arkuszu xlsx i w README; źródła finansowane przez przemysł oznaczone w Źródłach.
+- Jedna aplikacja (28.10.2026): cała treść wcześniejszych roboczych stron (raport, model v1, audyt) przeniesiona do aplikacji – hipotezy, zakładka „Leki i zamówienia publiczne”, ocena działań A1–A9, przebieg audytu; pogrupowana nawigacja. Treści o charakterze komercyjnym nie zostały przeniesione.
 
 Poprzednia wersja (27.10.2026) jest dostępna w historii repozytorium; jej wyniki są nieaktualne.
 
