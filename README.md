@@ -43,6 +43,7 @@ Wersja po wewnętrznym audycie metodycznym (3 błędy krytyczne, 8 istotnych, 12
 - Dodatkowo: w pliku xlsx usunięto kolizję nazw zakresów (stopa dyskonta kosztów i efektów) – po poprawce wartości w arkuszu zgadzają się ze stroną.
 - Deklaracja finansowania i konfliktu interesów (CHEERS 2022) – w stopce, na ekranie Wynik, w Metodologii, w arkuszu xlsx i w README; źródła finansowane przez przemysł oznaczone w Źródłach.
 - Jedna aplikacja (28.10.2026): cała treść wcześniejszych roboczych stron (raport, model v1, audyt) przeniesiona do aplikacji – hipotezy, zakładka „Leki i zamówienia publiczne”, ocena działań A1–A9, przebieg audytu; pogrupowana nawigacja. Treści o charakterze komercyjnym nie zostały przeniesione.
+- Inwentarz danych (28.10.2026): przywrócono pominięte dane publiczne z wcześniejszych wersji (m.in. 0,47% z wiremią – PLoS One 2017; trend rozpoznań i leczenia wobec 2019 r.; dane programu Moje Zdrowie z IV 2026; EUDA 2024; UKHSA 2026; interpretacja luk wojewódzkich; dodatkowe ograniczenie modelu; pełna tabela weryfikacji 33 parametrów). Wyniki modelu bez zmian.
 
 Poprzednia wersja (27.10.2026) jest dostępna w historii repozytorium; jej wyniki są nieaktualne.
 
