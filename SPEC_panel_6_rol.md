@@ -1,4 +1,7 @@
 # Specyfikacja aplikacji „HCV: ile kosztuje zaniechanie i kiedy zwraca się inwestycja”
+
+> **Uwaga (28.10.2026):** dokument historyczny – specyfikacja i symulowana recenzja wersji z 27.10.2026. Po audycie metodycznym część liczb jest nieaktualna: model ma 110 parametrów (nie 93), a maksimum leczonych w programie B.71 to 12 171 (2017), nie 8 521 (2019). Aktualne wartości i listę zmian zawiera aplikacja (zakładki „Jak to zostało sprawdzone” i „Aneks”).
+
 ## Symulowany panel 6 ról – recenzja przed budową UI, synteza wymagań, runda 2
 
 > **To jest symulowana recenzja.** Sześć „recenzentów” to role odegrane przez autora narzędzia na podstawie publicznie znanych zadań tych instytucji i funkcji. Żadna realna osoba ani instytucja nie recenzowała, nie oceniała ani nie zatwierdzała tej aplikacji. Nie używamy nazwisk.
