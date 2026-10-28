@@ -14,7 +14,7 @@ Autor pracuje w sektorze farmaceutycznym. Analiza powstała prywatnie, bez zlece
   - **Działania**: TOP 3, inicjatywy, ocena działań systemowych, wzór dla samorządów;
   - **Metoda i źródła**: założenia, przewodnik „Jak czytać”, metodologia z deklaracją, sprawdzenie (symulowana recenzja i audyt), źródła, aneks.
 - `pobierz/hcv_model_inwestycji.xlsx` – model z formułami (bez makr), z przeliczonymi wartościami; arkusze dla scenariuszy S0, I1, I2, I3, I4, I5, V1.
-- `pobierz/parametry.csv` – 114 parametrów, każdy ze źródłem, datą i typem (dane PL / zagraniczne / założenie).
+- `pobierz/parametry.csv` – 117 parametrów (w tym 3 liczby zgonów tylko do walidacji), każdy ze źródłem, datą i typem (dane PL / zagraniczne / założenie).
 - `SPEC_panel_6_rol.md` – specyfikacja i **symulowana** recenzja sześciu ról (np. płatnik, ZUS, klinicysta). Role zostały odegrane przez autora narzędzia; żadna realna osoba ani instytucja nie recenzowała ani nie zatwierdzała tej aplikacji.
 
 ## Metoda w skrócie
@@ -22,6 +22,30 @@ Model Markowa z otwartą kohortą (2026–2075, grupy wieku, korekta połowy cyk
 
 ## Źródła
 Dane publiczne: NFZ (statystyki programu lekowego B.71, Informator o terminach leczenia), NIZP PZH-PIB (EPIMELD), GUS, ZUS, AOTMiT, literatura recenzowana. Pełna lista ze źródłem i datą każdej liczby: zakładka „Źródła” oraz `pobierz/parametry.csv`. Stan danych: 28.10.2026.
+
+## Audyt 4 – 28.10.2026 (symulowany)
+Czwarty audyt (role analityka danych i researchera źródeł odegrane przez asystenta AI – nie realni eksperci; ocena przed poprawkami 7,0/10, B): 0 ustaleń krytycznych, 3 ważne, 4 średnie, 6 drobnych. Wszystkie wprowadzone. Najważniejsza zmiana – niższy udział HCV w raku wątroby – zmniejsza koszt zaniechania i podnosi koszt QALY programów; pokazujemy to bez wybierania. Wszystkie liczby to szacunek modelu.
+
+| Wynik | Po audycie 3 | Po audycie 4 |
+|---|---|---|
+| Koszt zaniechania (S0), 20 lat, sektor publiczny (bazowo) | 1 129 mln zł | 993 mln zł |
+| S0, 20 lat – bez zasiłków chorobowych | 273 mln zł | 132 mln zł |
+| S0, 50 lat (bazowo) | 6 353 mln zł | 5 917 mln zł |
+| S0, 50 lat – Monte Carlo mediana [95%] | 6 239 [4 463–8 293] | 5 820 [4 112–7 924] |
+| S0, 50 lat – bez zasiłków chorobowych | 4 080 mln zł | 3 621 mln zł |
+| S0 dla NFZ: 10 / 20 / 30 lat | −629 / −145 / +713 mln zł | −646 / −207 / +610 mln zł |
+| Pakiet WHO (I4), saldo 20 lat (bazowo) | +2 439 mln zł | +2 548 mln zł |
+| I4, saldo 20 lat – Monte Carlo mediana [95%] | 2 446 [2 117–2 774] | 2 516 [2 191–2 942] |
+| I4, koszt QALY 20 lat – NFZ / publiczny | 72 483 / 66 049 zł | 75 109 / 70 081 zł |
+| Szpitale (I1) / POZ (I2) / populacje kluczowe (I3), koszt QALY 20 lat – NFZ | 67 446 / 165 038 / 20 463 zł | 70 520 / 170 036 / 21 060 zł |
+| POZ (I2), szansa kosztu QALY poniżej progu | 91% | 70% |
+| Samo leczenie (V1), rok zwrotu (publiczny) | 2056 | 2064 |
+| I4, 50 lat, testy finansuje inny płatnik | −89 mln zł (oszczędność) | +103 mln zł (koszt bliski zera) |
+| Koszty ZUS przypisane HCV, 2026 | 43,8 mln zł | 34,2 mln zł |
+| Nowe raki wątroby związane z HCV, 2026 (cel kalibracji) | 712 | 576 |
+| Zgony wątrobowe związane z HCV, 2026 | 922 | 793 |
+
+Najważniejsze zmiany: udział HCV w raku wątroby 0,34 (CEH 2021) zamiast 0,42; zakres 0,26 (GBD 2023, za raportem PZH 2025) – 0,42 jako scenariusze; opis różnicy między rakiem wątrobowokomórkowym a całą grupą C22 (W1). Liczby w tekstach strony są generowane z wyników modelu przy budowie (W2). Udział HCV w marskości K74 28,2% – liczony z chorobowości, nie ze zgonów; 37,2% jako górna granica; opisano, że wysoka utrata zdolności do pracy wynika ze struktury modelu (W3). W Monte Carlo pełna kalibracja w każdym losowaniu – bez podwójnego liczenia niepewności i bez przybliżeń (S1, S2); szersze rozkłady wydajności testów i zastrzeżenie przy krzywej akceptowalności (S3). Zgony 2023: B18.2 = 66 (z 18 zgonami B18.1 daje 84 z 88 zgonów B18), C22 = 2 269, K74 = 1 867 (raporty PZH 2025) – tylko do walidacji (S4). Próg 244 821 zł/QALY: stan 28.10.2026 – nowe obwieszczenie GUS jeszcze nie opublikowane (ostatni wpis na liście GUS 20.10.2026; zwykle ok. 30.10). Rozkład zmian krok po kroku: zakładka „Jak to zostało sprawdzone” → „Audyt 4”.
 
 ## Audyt 3 – 28.10.2026 (symulowany)
 Trzeci audyt (role analityka danych i researchera źródeł odegrane przez asystenta AI – nie realni eksperci; ocena przed poprawkami 6,5/10, B−): 2 ustalenia krytyczne, 6 istotnych, 11 drobnych. Wszystkie wprowadzone albo opisane jako ograniczenie. Część wyników się poprawiła, część pogorszyła – pokazujemy je bez wybierania. Wszystkie liczby to szacunek modelu.
@@ -80,7 +104,7 @@ Wersja po wewnętrznym audycie metodycznym (3 błędy krytyczne, 8 istotnych, 12
 - Deklaracja finansowania i konfliktu interesów (CHEERS 2022) – w stopce, na ekranie Wynik, w Metodologii, w arkuszu xlsx i w README; źródła finansowane przez przemysł oznaczone w Źródłach.
 - Jedna aplikacja (28.10.2026): cała treść wcześniejszych roboczych stron (raport, model v1, audyt) przeniesiona do aplikacji – hipotezy, zakładka „Leki i zamówienia publiczne”, ocena działań A1–A9, przebieg audytu; pogrupowana nawigacja. Treści o charakterze komercyjnym nie zostały przeniesione.
 - Inwentarz danych (28.10.2026): przywrócono pominięte dane publiczne z wcześniejszych wersji (m.in. 0,47% z wiremią – PLoS One 2017; trend rozpoznań i leczenia wobec 2019 r.; dane programu Moje Zdrowie z IV 2026; EUDA 2024; UKHSA 2025; interpretacja luk wojewódzkich; dodatkowe ograniczenie modelu; pełna tabela weryfikacji 33 parametrów). Wyniki modelu bez zmian.
-- Audyt 2 i audyt 3 (28.10.2026, symulowane): zob. sekcje „Audyt 3” i „Audyt 2” powyżej oraz zakładkę „Aneks – lista zmian” w aplikacji.
+- Audyty 2, 3 i 4 (28.10.2026, symulowane): zob. sekcje „Audyt 4”, „Audyt 3” i „Audyt 2” powyżej oraz zakładkę „Aneks – lista zmian” w aplikacji.
 
 Poprzednia wersja (27.10.2026) jest dostępna w historii repozytorium; jej wyniki są nieaktualne.
 
